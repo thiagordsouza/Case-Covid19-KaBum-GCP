@@ -89,17 +89,17 @@ select all_city, city_with_deaths, round(city_with_deaths / all_city * 100, 2) a
     )
 
     select
-    a.state,
-    a.estimated_population,
-    b.city as city,
-    b.estimated_population as city_estimated_population,
-    round((b.estimated_population / a.estimated_population) * 100, 2) as population_concentration
+        a.state,
+        a.estimated_population,
+        b.city as city,
+        b.estimated_population as city_estimated_population,
+        round((b.estimated_population / a.estimated_population) * 100, 2) as population_concentration
     from
-    population_by_state a
-    join most_popular_city b on a.state = b.state
+        population_by_state a
+        join most_popular_city b on a.state = b.state
     where
-    ranking = 1
-    order by 5 desc
+        ranking = 1
+        order by 5 desc
 ```
 
 ### ETAPA 3 - Dashboard
