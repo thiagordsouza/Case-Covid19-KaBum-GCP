@@ -109,3 +109,7 @@ select all_city, city_with_deaths, round(city_with_deaths / all_city * 100, 2) a
 #### ETAPA 3 (item 4)
 
 ##### Crie um gráfico de linhas que representam os casos confirmados acumulados dia a dia no Brasil.
+
+###### Imagem 1 
+
+![Alt ou título da imagem](https://github.com/thiagordsouza/Case-Covid19-KaBum-GCP/blob/main/obitos-acumulados.png)
