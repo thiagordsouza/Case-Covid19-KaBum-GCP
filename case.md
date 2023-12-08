@@ -5,58 +5,58 @@
 #### 2 - Qual a quantidade de Casos confirmados por Estado, classificando os 5 primeiros estados com mais casos?
 
 ```
-    select 
+select 
     state,
     sum(confirmed) as total_confirmed
-    from 
+from 
     `covid.caso`
-    where 
+where 
     is_last = True
     and place_type = 'state'
-    group by 1
-    order by 2 desc   
+group by 1
+order by 2 desc   
 ```
 
 #### 3 - Qual a Letalidade em % (mortes/casos confirmados) por Estado, classificando os 5 primeiros estados com maior letalidade ?
 
 ```
-    select
+select
     state,
     deaths,
     confirmed,
     round(deaths / confirmed * 100, 3) as lethality
-    from 
+from 
     `covid.caso`
-    where
+where
     is_last = True
     and place_type = 'state'
-    order by 4 desc
+order by 4 desc
 ```
 #### 4 - Qual a Taxa de Óbitos por cada mil habitantes, por estado , listar os 5 primeiros estados com maior concentração de óbitos por cada mil habitantes(população) ?
 
 ```
-    select
+select
     state,
     deaths,
     estimated_population,
     round((deaths / estimated_population) * 1000, 2) as lethality
-    from 
+from 
     `covid.caso`
-    where
+where
     is_last = True
     and place_type = 'state'
-    order by 4 desc
+order by 4 desc
 ```
 
 #### 5 - Qual a porcentagem de municípios que registraram óbito em relação ao total de municípios da amostra?
 ```
-    declare city_with_deaths int64;
-    declare all_city int64;
+declare city_with_deaths int64;
+declare all_city int64;
 
-    set city_with_deaths = (select count(*) from `covid.caso` where is_last = True and place_type in ('city') and deaths > 0 and estimated_population is not null);
-    set all_city = (select count(*) from `covid.caso` where is_last = True and place_type in ('city') and estimated_population is not null);
+set city_with_deaths = (select count(*) from `covid.caso` where is_last = True and place_type in ('city') and deaths > 0 and estimated_population is not null);
+set all_city = (select count(*) from `covid.caso` where is_last = True and place_type in ('city') and estimated_population is not null);
 
-    select all_city, city_with_deaths, round(city_with_deaths / all_city * 100, 2) as city_with_deaths_percent
+select all_city, city_with_deaths, round(city_with_deaths / all_city * 100, 2) as city_with_deaths_percent
 ```
 
 #### 6 - Qual a população total por estado , o município mais populoso de cada estado e a representatividade de concentração populacional em porcentagem deste município em relação ao total de habitantes do estado ?
