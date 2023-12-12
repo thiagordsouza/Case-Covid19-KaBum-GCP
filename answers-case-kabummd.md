@@ -1,8 +1,8 @@
 ## Case Covid19 KaBum
 
-#### O case refere-se a responder questões relacionadas ao Covid-19.
+#### O case refere-se a responder questões relacionadas ao Covid-19, com o intuito de utilizar as ferramentas do Google Cloud Platform (GCP).
 #### Base de dados: <https://brasil.io/dataset/covid19/files/>
-##### Arquivos: caso.csv | obito_cartorio.csv
+##### Arquivos utilizados: caso.csv | obito_cartorio.csv
 
 ### ETAPA 2 - Bigquery
 
