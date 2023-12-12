@@ -1,5 +1,9 @@
 ## Case Covid19 KaBum
 
+#### O case refere-se a responder questões relacionadas ao Covid-19.
+#### Base de dados: <https://brasil.io/dataset/covid19/files/>
+##### Arquivos: caso.csv | obito_cartorio.csv
+
 ### ETAPA 2 - Bigquery
 
 #### 2 - Qual a quantidade de Casos confirmados por Estado, classificando os 5 primeiros estados com mais casos?
